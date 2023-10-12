@@ -6,8 +6,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class LearnLocators1 {
 	//WebDriver driver =null;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 	
+		try {
+			
 		
 	WebDriver driver = new ChromeDriver();
 	
@@ -17,21 +19,20 @@ public class LearnLocators1 {
 	
 	//driver.findElement(By.name("q")).sendKeys("Selenium");
 	
-	driver.findElement(By.xpath("//textarea[@id='APjFqb']")).sendKeys("Selenium");
-	
-	driver.getPageSource();
-	
-//	driver.getPageSource();
+	driver.findElement(By.xpath("//textarea[@id='APjFqb']")).sendKeys("Selenium Download");
 	
 	
-	driver.findElement(By.xpath("(//h3[text()='Selenium'])")).click();
-	//h3[text()='Selenium']
-	
-	
-	
-	//driver.findElement(By.xpath("//input[@value='Google Search']")).click();
-	
+	driver.findElement(By.xpath("//textarea[@id='APjFqb']")).sendKeys(Keys.ENTER);
+	Thread.sleep(5000);
 		
+	driver.findElement(By.xpath("(//h3[text()='Selenium'])")).click();
+
+driver.close();
+		}
+		catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
 
 	}
 
