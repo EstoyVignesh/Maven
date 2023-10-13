@@ -18,7 +18,7 @@ public class ReadExcel {
 		
 		XSSFWorkbook workbook= new XSSFWorkbook("C:\\Users\\arvin\\eclipse-workspace\\selenium_learning\\src\\test\\resources\\exceldata.xlsx");
 		
-		//XSSFSheet sheet= workbook.getSheet("data");
+		//XSSFSheet sheet= workbook.getSheet("Sheet1");
 		XSSFSheet sheet= workbook.getSheetAt(0);
 		
 		//to go to first row
@@ -33,7 +33,7 @@ public class ReadExcel {
 		{
 			for(int j=0; j<cells;j++)
 			{
-				String cellValue=sheet.getRow(i).getCell(j).getStringCellValue();
+				 String cellValue = sheet.getRow(i).getCell(j).getStringCellValue();
 				//int cellValue=sheet.getRow(i).getCell(j).getNumericCellValue();
 
 				
