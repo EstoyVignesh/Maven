@@ -45,7 +45,9 @@ public class WindowHandling {
 		System.out.println("Parent window text-->"+parentWindowText);
 		Thread.sleep(2000);
 
+		//driver.close(); // will close only the current active window
 		
+		driver.quit();
 		
 		
 		
