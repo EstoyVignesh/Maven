@@ -20,13 +20,15 @@ public class Q2_DemoBlaze {
 		
 		//String web1 = driver.getTitle();
 		System.out.println(driver.getTitle());
-		
+	
 		if(web.equals(driver.getTitle()))
 		{
 			System.out.println("Page landed on Correct Website");
 		}else
 			System.out.println("Page not Landed on Correct Website");
 		
+		
+
 	}
 
 }
