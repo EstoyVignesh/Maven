@@ -7,9 +7,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class GreenkartAssignment_Total {
+public class Greenkart_TotalDiscount {
 
 	static WebDriver driver = null;
 
@@ -70,13 +71,52 @@ public class GreenkartAssignment_Total {
 			System.out.println("Price is not equal");
 		}
 		
+		driver.findElement(By.xpath("//input[@class='promoCode']")).sendKeys("rahulshettyacademy");
+		Thread.sleep(2000);
 		
-	//	)
-				
+		driver.findElement(By.xpath("//button[@class='promoBtn']")).click();
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));	
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@class='promoInfo']")));
+
+		String response = driver.findElement(By.xpath("//span[@class='promoInfo']")).getText();
+		System.out.println("The Coupen Apply response is :"+response);
 		
 		
+		/*String totalDiscount = driver.findElement(By.xpath("//span[@class='discountPerc']")).getText();		
+		int discountPer = Integer.parseInt(totalDiscount);		
+		System.out.println("Total Discount Percentage is "+discountPer+"%");*/
+		
+		String totalDiscountPrice = driver.findElement(By.xpath("//span[@class='discountPerc']")).getText();
+		
+		String totalDiscountPri = totalDiscountPrice.split("%")[0];  //10
+		
+		//10%20%30% -> %
+		
+		System.out.println("The Total Discount Percentage is "+totalDiscountPri);
+		
+		//to convert string to decimal number(float)		
+		double totalDisc = Double.parseDouble(totalDiscountPri);
+		System.out.println(totalDisc);
+		
+		double totalDisCal = totAmt - (totAmt*totalDisc)/100;
+		System.out.println("calculated amount-->"+totalDisCal);
+		
+		Thread.sleep(2000);
+		
+		String totalAfterDiscount = driver.findElement(By.xpath("//span[@class='discountAmt']")).getText();
+		System.out.println("Price After Discount is "+totalAfterDiscount);
+		
+		double totalAfterDiscount1 =Double.parseDouble(totalAfterDiscount);
+		
+		if(totalDisCal==totalAfterDiscount1)
+		{
+			System.out.println("The Total Calculated Discount is Same");
+		}else
+		{
+		System.out.println("Not Same");
+		}
+
 	}
+
 }
-	
-
-
