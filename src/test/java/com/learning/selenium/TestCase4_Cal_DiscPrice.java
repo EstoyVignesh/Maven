@@ -52,10 +52,11 @@ public class TestCase4_Cal_DiscPrice {
 		//	int totDiscPrice=0;
 			
 			List<WebElement> originalP=driver.findElements(By.xpath("//tbody/tr[1]/td[2]"));
-			int oriPrice=0;
+			double origDisc=0;
 			
 			List<WebElement> dscountP=driver.findElements(By.xpath("//tbody/tr[1]/td[3]"));
-			int DiscountPrice=0;
+		
+			double DiscountPrice=0;
 			
 			
 			//int oriPri = Integer.parseInt(originalP);
@@ -63,23 +64,32 @@ public class TestCase4_Cal_DiscPrice {
 			for(WebElement oriPri:originalP)
 			{
 				String originalPrice=oriPri.getText();
-				int price= Integer.parseInt(originalPrice); 
+				double price= Double.parseDouble(originalPrice); 
+				System.out.println("The Oiginal Price is "+price);
 				
 				for(WebElement disPri:dscountP)
 				{
-				String discountPrice=oriPri.getText();
-				int discprice= Integer.parseInt(discountPrice); 
+				String discountPrice=disPri.getText();
+				double discprice= Double.parseDouble(discountPrice); 
+				System.out.println("The Discount Price is "+discprice);
 				
-				int origDisc=(price/discprice)*100;
+			    origDisc=(discprice/price)*100;
 				
-			//	String originalDiscountPer =
-				//48+160=208
-				//208+180=388
+				//String origDisc =Integer.toString();
+				
+	
 				}
 			}
 			
 			//String origDisc;
-		//	System.out.println("TotalPrice after calculation-->"+origDisc);
+			
+			//System.out.printf("TotalPrice after calculation-->"+"%.2f",origDisc);
+			
+			System.out.println(Math.round(origDisc)+"%");
+			
+			
+			//String discountPercentage = Double.toString(origDisc);
+			//System.out.println("String valued - TotalPrice after calculation-->"+discountPercentage+"%");
 			
 			
 
