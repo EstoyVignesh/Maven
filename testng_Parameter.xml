@@ -4,7 +4,6 @@
 	<test thread-count="5" name="Test">
 		<parameter name="url" value="https://www.google.com/"></parameter>		
 		<parameter name="searchTerm" value="TestNG"></parameter>
-		<parameter name="searchTerm" value="selenium"></parameter>
 		<classes>
 			<class name="com.learning.testng.TestNGParameter" />
 		</classes>

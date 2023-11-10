@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.learning.testng.TestNGAssertions">
+      <class name="com.learning.testng.TestCase_W3Schools_learnJava">
         <methods>
-          <include name="quitBrowser"/>
-          <include name="launchBrowser"/>
-          <include name="verifyTitleUsingNotEquals"/>
+          <include name="profile"/>
+          <include name="test_case1"/>
         </methods>
-      </class> <!-- com.learning.testng.TestNGAssertions -->
+      </class> <!-- com.learning.testng.TestCase_W3Schools_learnJava -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

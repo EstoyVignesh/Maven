@@ -33,6 +33,8 @@ public class TestNGDataprovider {
 	/*     The Return Type for DataProvider is Object[][] ( 2-Dimensional Object Array)
 	 * 
 	 *     Object[][] is used Because Test Data can be of Any Data Type
+	 *     [] -> rows--> how many times you want execute the test case
+	 *     []--> column--> how many test data we have parameterized
 	 */
 	
 	//@DataProvider(name="fetchData")
@@ -47,6 +49,8 @@ public class TestNGDataprovider {
 			{"https://www.google.com","Auto It"}
 			
 				};
+				
+	
 				
 				
 	}
