@@ -39,7 +39,7 @@ static WebDriver driver = null;
 		Thread.sleep(2000);
 		
 		//To ScrollRight to the End of the Content
-		js.executeScript("window.scrollTo(document.body.scrollWidth,0);");
+		js.executeScript("window.scrollTo(document.body.scrollWidth,0);"); 
 				
 		System.out.print(js.executeScript("return document.title;"));
 		
